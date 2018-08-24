@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% include 'includes/head.twig' %}
 	{% include 'includes/styles.twig' %}
 	{% include 'includes/scripts.twig' %}
 </head>
 <body>
+	{% include 'blocks/nav.twig' %}
 	<main class="site">
 		{% block content %}
 			Sorry, no content

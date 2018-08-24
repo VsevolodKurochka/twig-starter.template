@@ -1,7 +1,7 @@
 <?php
 	require_once 'vendor/connect.php';
 	
-	echo $twig->render('pages/index.twig', array(
+	echo $twig->render('site/index.twig', array(
 		'name' => 'Vsevolod'
 	));
 ?>
