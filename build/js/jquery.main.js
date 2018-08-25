@@ -15,10 +15,10 @@ $(document).ready(function () {
 
 	// Collapse
 
-	$(".js-collapse__group.active").children(".js-collapse__group-body").slideDown();
+	$(".collapse__group.active").find(".collapse__group-body").slideDown();
 
-	$('.js-collapse').on('click', '.js-collapse__group-header', function () {
-		var collapseInner = $(this).parents('.js-collapse').find('.js-collapse__group');
+	$('.collapse').on('click', '.collapse__group-header', function () {
+		var collapseInner = $(this).parents('.collapse').find('.collapse__group');
 
 		$(this).parent().toggleClass('active');
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 		collapseInner.not($(this).parent()).removeClass('active');
 
-		collapseInner.children('.js-collapse__group-body').not($(this).next()).slideUp("slow");
+		collapseInner.children('.collapse__group-body').not($(this).next()).slideUp("slow");
 	});
 	// Tabs
 	$('[data-action="tab"]').click(function () {
