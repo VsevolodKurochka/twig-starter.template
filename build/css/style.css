@@ -840,6 +840,10 @@ b,
   -webkit-tap-highlight-color: transparent;
 }
 
+.btn-group .btn {
+  margin: 5px;
+}
+
 .btn_lg {
   padding: 15px 25px;
   font-size: 18px;
@@ -898,6 +902,19 @@ b,
 
 .btn_brand-1-simple:hover {
   background-color: #097dc7;
+}
+
+.btn_brand-2 {
+  color: #fff;
+  background-color: #f00;
+}
+
+.btn_brand-2:before {
+  background-color: #b30000;
+}
+
+.btn_brand-2-simple:hover {
+  background-color: #b30000;
 }
 
 .effect:before {
