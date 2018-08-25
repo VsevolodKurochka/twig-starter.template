@@ -57,15 +57,11 @@
 
 .docs__group {
   padding-bottom: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .docs__group:not(:last-child) {
   border-bottom: 1px solid #e4e4e4;
-}
-
-.docs__group:not(:first-child) {
-  margin-top: 30px;
 }
 
 .docs__group-inner {

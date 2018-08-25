@@ -9,19 +9,45 @@
 		box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25)
 		+transition()
 
-		+m('fadeIn')
+		+m('effect-1')
 			opacity: 0
 			transform: scale(0.7)
 
 			#{$self}_showing_in &
 				opacity: 1
 
-		+m('slideInRight')
+		+m('effect-2')
 			opacity: 0
 			transform: translateX(20%)
 			transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
 
 			#{$self}_showing_in &
+				opacity: 1
+
+		+m('effect-3')
+			opacity: 0
+			transform: translateY(20%)
+			transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
+
+			#{$self}_showing_in &
+				opacity: 1
+
+		+m('effect-4')
+			opacity: 0
+			transform-style: preserve-3d
+			transform: rotateY(-70deg)
+
+			#{$self}_showing_in &
+				transform: rotateY(0deg)
+				opacity: 1
+
+		+m('effect-5')
+			opacity: 0
+			transform-style: preserve-3d
+			transform: rotateX(-70deg)
+
+			#{$self}_showing_in &
+				transform: rotateX(0deg)
 				opacity: 1
 
 		#{$self}_showing_in &

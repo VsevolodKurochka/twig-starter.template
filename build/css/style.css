@@ -1810,18 +1810,18 @@ input[type="checkbox"]:checked + .control__indicator:before {
   transition: all .5s ease;
 }
 
-.modal__box_fadeIn {
+.modal__box_effect-1 {
   opacity: 0;
   -webkit-transform: scale(.7);
   -ms-transform: scale(.7);
   transform: scale(.7);
 }
 
-.modal_showing_in .modal__box_fadeIn {
+.modal_showing_in .modal__box_effect-1 {
   opacity: 1;
 }
 
-.modal__box_slideInRight {
+.modal__box_effect-2 {
   opacity: 0;
   -webkit-transition: all .3s cubic-bezier(.25, .5, .5, .9);
   -o-transition: all .3s cubic-bezier(.25, .5, .5, .9);
@@ -1831,8 +1831,54 @@ input[type="checkbox"]:checked + .control__indicator:before {
   transform: translateX(20%);
 }
 
-.modal_showing_in .modal__box_slideInRight {
+.modal_showing_in .modal__box_effect-2 {
   opacity: 1;
+}
+
+.modal__box_effect-3 {
+  opacity: 0;
+  -webkit-transition: all .3s cubic-bezier(.25, .5, .5, .9);
+  -o-transition: all .3s cubic-bezier(.25, .5, .5, .9);
+  transition: all .3s cubic-bezier(.25, .5, .5, .9);
+  -webkit-transform: translateY(20%);
+  -ms-transform: translateY(20%);
+  transform: translateY(20%);
+}
+
+.modal_showing_in .modal__box_effect-3 {
+  opacity: 1;
+}
+
+.modal__box_effect-4 {
+  opacity: 0;
+  -webkit-transform: rotateY(-70deg);
+  transform: rotateY(-70deg);
+
+  -webkit-transform-style: preserve-3d;
+
+  transform-style: preserve-3d;
+}
+
+.modal_showing_in .modal__box_effect-4 {
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.modal__box_effect-5 {
+  opacity: 0;
+  -webkit-transform: rotateX(-70deg);
+  transform: rotateX(-70deg);
+
+  -webkit-transform-style: preserve-3d;
+
+  transform-style: preserve-3d;
+}
+
+.modal_showing_in .modal__box_effect-5 {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
 }
 
 .modal_showing_in .modal__box {
@@ -1967,6 +2013,11 @@ input[type="checkbox"]:checked + .control__indicator:before {
 
 .modal_showing_in {
   overflow-y: visible;
+}
+
+.modal_3d {
+  -webkit-perspective: 1300px;
+  perspective: 1300px;
 }
 
 .modal-open {
