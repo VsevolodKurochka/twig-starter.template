@@ -11,6 +11,7 @@ import sassGlob 				from 'gulp-sass-glob';
 import csscomb 					from 'gulp-csscomb';
 import autoprefixer 		from 'gulp-autoprefixer';
 import cleanCSS					from 'gulp-clean-css';
+import rename						from 'gulp-rename';
 
 import {reload} from './browserSync';
 
@@ -28,6 +29,7 @@ gulp.task('sass', () => gulp
 		cascade: false
 	}))
 	.pipe(cleanCSS({compatibility: 'ie8'}))
+	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(gulp.dest(`${folders.build}/css`))
 );
 
