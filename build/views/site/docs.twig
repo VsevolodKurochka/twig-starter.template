@@ -1,16 +1,24 @@
-{% set title = 'Документация' %}
-{% set description = 'Примеры использования компонентов.' %}
-{% set image = 'img/logo.png' %}
-{% set url = 'url' %}
-
+{% import 'helpers/macros.twig' as macros %}
 {% extends 'layouts/base.twig' %}
 
-{% block nav %}
+{% block meta %}
+	{% set title = 'Документация' %}
+	{% set description = 'Примеры использования компонентов' %}
+	{% set image = 'img/logo.png' %}
+	{% set url = 'url' %}
+	{{ macros.meta(title, description, image, url) }}
+{% endblock %}
+
+{% block css %}
+	{{ macros.css('css/style.css') }}
+	{{ macros.css('css/docs/style.css') }}
+{% endblock %}
+
+{% block js %}
+	{{ macros.js('js/libs.min.js') }}
+	{{ macros.js('js/vanilla.main.js') }}
 {% endblock %}
 
 {% block content %}
-	{% include 'pages/index/content.twig' %}
-{% endblock %}
-
-{% block footer %}
+	{% include 'pages/index/section-1.twig' %}
 {% endblock %}
