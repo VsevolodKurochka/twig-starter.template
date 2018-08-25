@@ -5,11 +5,14 @@
 
 import gulp 						from 'gulp';
 import folders					from './folders';
+
 import sass 						from 'gulp-sass';
 import sassGlob 				from 'gulp-sass-glob';
-import autoprefixer 		from 'gulp-autoprefixer';
 import csscomb 					from 'gulp-csscomb';
-import {server, reload, serve} from './browserSync';
+import autoprefixer 		from 'gulp-autoprefixer';
+import cleanCSS					from 'gulp-clean-css';
+
+import {reload} from './browserSync';
 
 
 // Task `sass`
@@ -24,6 +27,7 @@ gulp.task('sass', () => gulp
 		browsers: ['last 15 versions'],
 		cascade: false
 	}))
+	.pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(gulp.dest(`${folders.build}/css`))
 );
 
