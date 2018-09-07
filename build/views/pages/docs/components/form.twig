@@ -44,6 +44,7 @@
 				{% for input in inputs %}
 					<div class="form__row form__row_line">
 						{{ form.input(input.name, input.value, input.type, input.attributes) }}
+						<span class="form__line"></span>
 					</div>
 				{% endfor %}
 				<div class="form__row">
@@ -59,6 +60,7 @@
 				{% for input in inputs %}
 					<div class="form__row form__row_line">
 						{{ form.input(input.name, input.value, input.type, input.attributes) }}
+						<span class="form__line"></span>
 					</div>
 				{% endfor %}
 				<div class="form__row">

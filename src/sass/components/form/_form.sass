@@ -7,14 +7,15 @@
 		+relative()
 
 	&_block &__row
-		margin-bottom: 15px
+		+offset(15px)
 
-	+max(sm)
-		&_line &__row
-			margin-bottom: 15px
+	&_line &
 
-	+min(sm)
-		&_line &
+		+max(sm)
+			&__row
+				+offset(15px)
+
+		+min(sm)
 
 			&__content
 				display: flex
@@ -35,11 +36,15 @@
 			padding: 15px
 			border: none
 
+			&:focus
+				+placeholder()
+					color: transparent
+
 		&__line
 			+absolute(null, null, 0, 0)
 			+size(0, 1px)
-			background-color: $color-brand-1
 			+transition()
+			+bgc($color-brand-1)
 
 		input:focus + &__line
 			width: 100%
@@ -49,7 +54,7 @@
 				content: ""
 				+absolute(null, null, 0, 0)
 				+size(100%, 1px)
-				background-color: transparentize($color-black, 0.8)
+				+bgc(transparentize($color-black, 0.8))
 
 	@else
 		&__control
@@ -59,5 +64,5 @@
 			&:focus
 				border-color: $color-brand-1
 
-				+placeholder
+				+placeholder()
 					color: transparent
