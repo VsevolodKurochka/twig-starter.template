@@ -1,17 +1,16 @@
-+b('nav')
-	+e('logo')
-		font-size: 0
+.nav__logo
+	font-size: 0
 
-		+max(md)
-			display: flex
-			align-items: center
-			justify-content: space-between
+	+max(md)
+		display: flex
+		align-items: center
+		justify-content: space-between
 
-		+ee('content')
-			display: inline-block
+	&-content
+		display: inline-block
+	
+	img
+		vertical-align: middle
 		
-		img
-			vertical-align: middle
-			
-			+max(md)
-				max-height: 24px
+		+max(md)
+			max-height: 24px

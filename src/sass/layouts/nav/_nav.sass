@@ -1,7 +1,7 @@
-+b('nav')
+.nav
 	+transition()
 
-	+e('row')
+	&__row
 		justify-content: space-between
 		align-items: center
 
@@ -20,11 +20,12 @@
 		+ .site
 			margin-top: 56px
 
-		+e('container')
+		&__conteiner
 			height: 100%
 			flex-basis: 100%
 
 	+min(md)
 		+padding-y(15px)
-		+m('scrolled')
+
+		&_scrolled
 			background-color: $color-black
