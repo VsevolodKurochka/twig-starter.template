@@ -1,0 +1,9 @@
+{% import "helpers/macros.form.twig" as form %}
+{% import "helpers/macros.landing.twig" as landing %}
+
+<section class="test">
+	<div class="container">
+		{{ form.input('name', null, 'text', {'placeholder': 'Имя'}) }}
+		{{ landing.button('button', 'button-test', 'Text', {'data-modal': 'true'}) }}
+	</div>
+</section>
