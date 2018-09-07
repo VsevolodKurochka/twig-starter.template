@@ -19,3 +19,13 @@
 		{% endfor %}
 	>{{text}}</button>
 {% endmacro %}
+
+{% macro control(name, value, type, attributes, text, labelClass) %}
+	{% set id = (attributes.id) ? attributes.id : name %}
+	<label class="control {{labelClass}}" for="{{id}}">
+		{% from _self import input %}
+		{{ input(name, value, type, attributes) }}
+		<div class="control__indicator"></div>
+		<p class="control__text">{{text}}</p>
+	</label>
+{% endmacro %}
