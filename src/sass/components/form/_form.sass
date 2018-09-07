@@ -19,51 +19,41 @@
 			&__content
 				display: flex
 				justify-content: center
-				+margin-x(-getComp(gutter))
+				+margin-x( -getComp(gutter) )
 
 			&__row
 				flex: 1
-				+padding-x(getComp(gutter))
-				&:not(:last-child)
-					margin-right: 15px
+				+padding-x( getComp(gutter) )
+				+offset('r', 15px)
 
 			&__submit
 				+size(100%)
 
 	@if $themeFormDesign == "new"
 		&__control
-			+input-default
-
+			+input-default()
+			padding: 15px
 			border: none
 
 		&__line
-			position: absolute
-			left: 0
-			bottom: 0
-
+			+absolute(null, null, 0, 0)
 			+size(0, 1px)
-
 			background-color: $color-brand-1
-
-			+transition
+			+transition()
 
 		input:focus + &__line
 			width: 100%
 
 		&__row_line
 			&:before
-				+pseudo
-
-				left: 0
-				bottom: 0
-				height: 1px
-				width: 100%
+				content: ""
+				+absolute(null, null, 0, 0)
+				+size(100%, 1px)
 				background-color: transparentize($color-black, 0.8)
 
 	@else
 		&__control
 			+input-default()
-
 			border: 1px solid #ddd
 
 			&:focus
