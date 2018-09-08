@@ -1,4 +1,4 @@
-{% macro nav_hamburger() %}
+{% macro hamburger() %}
 	<button class="hamburger hamburger_effect-2" type="button" id="js-nav-hamburger">
 		<span class="hamburger__lines">
 			<span></span>
@@ -9,16 +9,16 @@
 	</button>
 {% endmacro %}
 
-{% macro nav_logo(class) %}
+{% macro logo(class) %}
 	{% import _self as macros %}
 	<div class="nav__logo {{class}}">
-		{{ macros.nav_hamburger() }}
+		{{ macros.hamburger() }}
 		<div class="nav__logo-content"><img class="nav__logo-content-img" src="img/logo.png" alt="" role="presentation"/>
 		</div>
 	</div>
 {% endmacro %}
 
-{% macro nav_menu(class) %}
+{% macro menu(class) %}
 	<nav class="nav__menu {{class}}" id="js-navigation-menu">
 		<li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#id-1">Link 1</a></li>
 		<li class="nav__menu-item"><a class="nav__menu-item-link" data-scroll="data-scroll" href="#id-2">Link 2</a></li>
@@ -26,7 +26,7 @@
 	</nav>
 {% endmacro %}
 
-{% macro nav_addition(type,  class) %}
+{% macro addition(type,  class) %}
 	<div class="nav__addition {{class}}" id="js-nav-addition">
 		{% if type == '1' %}
 			<div class="addition-toggle" id="js-nav-addition-button-1">
