@@ -1,6 +1,6 @@
 =navAddition1()
 	.nav__addition
-		+relative()
+		+r()
 
 		&-link
 			display: block
@@ -11,7 +11,7 @@
 
 
 		&-toggle
-			+relative()
+			+r()
 			+size(100%)
 				
 			display: flex
@@ -26,7 +26,7 @@
 			font-size: 0
 
 			span
-				+relative()
+				+r()
 				display: inline-block
 				vertical-align: middle
 
@@ -45,7 +45,7 @@
 			&:before
 				content: ''
 
-				+absolute(0, 0)
+				+a(0, 0)
 				+size(50%, 100%)
 				background-color: darken($color-responsive-menu, 15%)
 				opacity: 0
@@ -57,7 +57,7 @@
 					opacity: 1
 
 			&-links
-				+absolute(100%, 0)
+				+a(100%, 0)
 				min-width: 180px
 				padding: 15px
 				background-color: $color-responsive-menu

@@ -25,14 +25,14 @@ $hamburger-line-radius: 5px
 	-webkit-tap-highlight-color: transparent
 	cursor: pointer
 	z-index: 100
-	+relative
+	+r
 
 	@extend %hamburger-transition
 
 	@extend %hamburger-format
 
 	&__lines
-		+relative()
+		+r()
 		+size($hamburger-width, $hamburger-height)
 
 		overflow: hidden
@@ -43,7 +43,7 @@ $hamburger-line-radius: 5px
 
 		span
 			display: block
-			+absolute(null, null, null, 0)
+			+a(null, null, null, 0)
 			+size($hamburger-line-width, $hamburger-line-height)
 
 			background-color: $color-white

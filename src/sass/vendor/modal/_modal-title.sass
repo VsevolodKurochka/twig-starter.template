@@ -1,6 +1,6 @@
 .modal
 	&__title
-		+relative()
+		+r()
 		
 		margin-bottom: 20px
 		padding-bottom: 7.5px
@@ -16,7 +16,7 @@
 
 		&:after
 			content: ''
-			+absolute(100%, null, null, 50%)
+			+a(100%, null, null, 50%)
 			+size(25%, 2px)
 			transform: translateX(-50%)
 			background-color: $color-brand-1

@@ -1,34 +1,37 @@
 .modal
-  display: flex
-  align-items: center
-  justify-content: center
-  +fixed(0, 0, 0, 0)
-  +size(100%)
-  +p-x(15px)
-  overflow: hidden
-  z-index: z("modal")
-  backface-visibility: hidden
-  -webkit-overflow-scrolling: touch
-  outline: 0
-  background-color: rgba(46, 46, 46, 0.8)
+	
+	+f(0, 0, 0, 0)
+	+size(100%)
+	+p-x(15px)
 
-  +min(sm)
-    min-height: 460px
+	display: flex
+	align-items: center
+	justify-content: center
+	
+	overflow: hidden
+	z-index: z("modal")
+	backface-visibility: hidden
+	-webkit-overflow-scrolling: touch
+	outline: 0
+	background-color: rgba(46, 46, 46, 0.8)
 
-  @extend %modalTransition
-  @extend %showing
+	+min(sm)
+		min-height: 460px
 
-  &_showing
-    @extend %showing
+	@extend %modalTransition
+	@extend %showing
 
-    &_in
-      overflow-y: visible
+	&_showing
+		@extend %showing
 
-      @extend %showing_in
+		&_in
+			overflow-y: visible
 
-  &_3d
-    perspective: 1300px
+			@extend %showing_in
 
-  &-open
-    overflow: hidden
-    padding-right: 17px
+	&_3d
+		perspective: 1300px
+
+	&-open
+		overflow: hidden
+		padding-right: 17px
