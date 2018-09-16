@@ -9,10 +9,10 @@ $themeColumn: "col"
 		$defaultValue: getComp(width) / getComp(columns) * $i
 
 		@if $class != null
-			+b(unquote($themeColumn) - $class - $i)
+			.#{unquote($themeColumn) - $class - $i}
 				+flexColumnWidth($defaultValue)
 		@else
-			+b(unquote($themeColumn) - $i)
+			.#{unquote($themeColumn) - $i}
 				+flexColumnWidth($defaultValue)
 
 +make-column()

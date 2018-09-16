@@ -1,4 +1,4 @@
-+b('modal')
+.modal
   display: flex
   align-items: center
   justify-content: center
@@ -18,7 +18,7 @@
   @extend %modalTransition
   @extend %showing
 
-  +m('showing')
+  &_showing
     @extend %showing
 
     &_in
@@ -26,7 +26,7 @@
 
       @extend %showing_in
 
-  +m('3d')
+  &_3d
     perspective: 1300px
 
   &-open

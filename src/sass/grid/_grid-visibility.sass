@@ -1,18 +1,18 @@
 =visibility($visibility)
-	+b('hidden-' + $visibility)
+	.#{'hidden-' + $visibility}
 		display: none !important
 
-	+b('visible-' + $visibility)
+	.#{'visible-' + $visibility}
 		display: block !important
 
 %visible
 	display: none !important
 
-+b('hidden')
+.hidden
 	@extend %visible
 
 @each $br-name, $br-value in $breakpoints
-	+b('visible-' + $br-name)
+	.visible-#{$br-name}
 		@extend %visible
 
 +min(lg)
