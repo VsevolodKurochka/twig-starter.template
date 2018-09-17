@@ -3,7 +3,7 @@
 /// @param {String} $fs-map - font-size
 /// @param {Map} $fs-breakpoints [$breakpoints] - font-size connected on breakpoints
 /// @author Vsevolod Kurochka
-=fs($fs-map, $fs-breakpoints: $breakpoints)
+=fs-map($fs-map, $fs-breakpoints: $breakpoints)
 	$fs-map: map-get($sizes, $fs-map)
 
 	@each $fs-breakpoint, $fs-font-size in $fs-map
