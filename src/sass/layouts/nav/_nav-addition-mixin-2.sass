@@ -18,14 +18,14 @@
 				white-space: nowrap
 
 		&-link
-			display: inline-block
-			margin-right: 15px
+			+d('inline-block')
+			+mr(15px)
 			text-decoration: none
-			color: $color-white
-			font-size: 14px
+			+c($color-white)
+			+fs(14px)
 
 			+min(md)
-				display: block
-				margin-right: 0
-				color: $color-black
-				font-size: 18px
+				+d('block')
+				+mr(0)
+				+c($color-black)
+				+fs(18px)
