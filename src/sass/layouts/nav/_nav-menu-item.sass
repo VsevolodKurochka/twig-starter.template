@@ -1,31 +1,29 @@
 .nav__menu-item
-	display: block
+	+d('block')
 
 	+transition()
 
 	a
-		display: block
-		position: relative
-		color: inherit
+		+d('block')
+		+r()
+		+c('inherit')
 		text-decoration: none
 
 	+max(md)
-		margin-bottom: 10px
+		+mb(10px)
 
 		a
 			padding: 10px 15px
-			color: $color-white
+			+c($color-white)
 
 
 	+min(md)
-		display: inline-block
+		+d('inline-block')
 		vertical-align: middle
-
-		&:not(:last-child)
-			margin-right: 15px
+		
+		+offset('r', 15px)
 
 		a
-			padding-top: 7.5px
-			padding-bottom: 7.5px
+			+py(7px)
 
-			+linkEffect3
+			+linkEffect3()
