@@ -34,10 +34,10 @@ $btn-border: ("brand-1": ($color-brand-1, $color-brand-1))
 
 	&_shadow
 		&-brand-1
-			box-shadow: 0 3px 8px 1px transparentize($color-brand-1, 0.5)
+			+bs("0 3px 8px 1px transparentize($color-brand-1, 0.5)")
 
 		&:hover
-			box-shadow: none
+			+bs("none")
 
 	//-
 	//- Iteration button fluid color

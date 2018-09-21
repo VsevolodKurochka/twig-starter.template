@@ -25,7 +25,7 @@ $hamburger-line-radius: 5px
 	-webkit-tap-highlight-color: transparent
 	cursor: pointer
 	z-index: 100
-	+r
+	+r()
 
 	@extend %hamburger-transition
 
@@ -42,25 +42,23 @@ $hamburger-line-radius: 5px
 		@extend %hamburger-transition
 
 		span
-			display: block
+			+d(block)
 			+a(null, null, null, 0)
 			+size($hamburger-line-width, $hamburger-line-height)
-
-			background-color: $color-white
+			+bgc($color-white)
 			border-radius: $hamburger-line-radius
 			
 			@extend %hamburger-transition	
 
 	&__text
 		margin-left: 15px
-		color: $color-white
+		+c($color-white)
+		+fw(bold)
+		+fs(18px)
 		text-transform: uppercase
-		font-weight: bold
-		font-size: 18px
-
 		@extend %hamburger-format
 
 	+navHamburgerEffect2()
 
 	+min(md)
-		display: none
+		+d(none)
