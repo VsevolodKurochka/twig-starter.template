@@ -7,9 +7,7 @@
 </head>
 <body>
   {% block nav %}{% include 'blocks/nav.twig' %}{% endblock %}
-  <main class="site">
-    {% block content %}Sorry, no content{% endblock %}
-    {% block footer %}{% include 'blocks/footer.twig' %}{% endblock %}
-  </main>
+  <main class="site">{% block content %}Sorry, no content{% endblock %}</main>
+  {% block footer %}{% include 'blocks/footer.twig' %}{% endblock %}
 </body>
 </html>

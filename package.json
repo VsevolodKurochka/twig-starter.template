@@ -28,10 +28,10 @@
     "gulp-imagemin": "^4.1.0",
     "gulp-install": "^1.1.0",
     "gulp-notify": "^3.2.0",
-    "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^3.2.1",
-    "gulp-sass-glob": "^1.0.9"
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-uglify": "^3.0.1"
   },
   "dependencies": {
     "del": "^3.0.0",

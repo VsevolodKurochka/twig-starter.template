@@ -6,22 +6,28 @@
 import gulp 						from 'gulp';
 import folders					from './folders';
 import babel 						from 'gulp-babel';
+
+import uglify 					from 'gulp-uglify';
 import notify 					from 'gulp-notify';
-import {server, reload, serve} from './browserSync';
+import rename						from 'gulp-rename';
+
+import {reload} 				from './browserSync';
 
 
-// Task `scripts`
-gulp.task('scripts', () =>
-	gulp.src(`${folders.src}/js/*.js`)
+// Task `babel`
+gulp.task('babel', () =>
+	gulp.src(`${folders.src}/js/babel/*.babel.js`)
 		.pipe(babel())
 		.on('error', notify.onError({
 			title: 'Babel Error',
 			message: '<%= error.message %>'
 		}))
-		.pipe(gulp.dest(`${folders.build}/js`))
+		.pipe(uglify())
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(gulp.dest(`${folders.src}/js/libs`))
 );
 
-// Task `scripts:watch`
-gulp.task('scripts:watch', () =>
-	gulp.watch(`${folders.src}/js/*.js`, gulp.series('scripts', reload))
+// Task `babel:watch`
+gulp.task('babel:watch', () =>
+	gulp.watch(`${folders.src}/js/babel/*.babel.js`, gulp.series('babel', reload))
 );

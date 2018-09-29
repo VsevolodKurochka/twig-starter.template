@@ -22,20 +22,18 @@ import {server, reload, serve} from './tasks/browserSync';
 // Your "watch" task
 gulp.task(
 	'watch', 
-	gulp.parallel(
+	gulp.series(
 		serve,
-		'sass',
-		//'templates',
-		'scripts',
+		'babel',
 		'concat',
-		'image',
-		'fonts',
-		'sass:watch',
-		//'templates:watch',
-		'scripts:watch',
-		'concat:watch',
-		'image:watch',
-		'fonts:watch'
+		gulp.parallel(
+			'sass',
+			'sass:watch',
+			'image',
+			'fonts',
+			'image:watch',
+			'fonts:watch'
+		)
 	)
 );
 
@@ -44,8 +42,7 @@ gulp.task(
 	'build',
 	gulp.parallel(
 		'sass',
-		//'templates',
-		'scripts',
+		'babel',
 		'image',
 		'fonts'
 	)
