@@ -1,11 +1,12 @@
 {% import 'macros/macros.base.twig' as macros %}
 {% extends 'layouts/base.twig' %}
 
+{% set title = 'Документация' %}
+{% set description = 'Примеры использования компонентов' %}
+{% set image = 'img/logo.png' %}
+{% set url = 'url' %}
+
 {% block meta %}
-	{% set title = 'Документация' %}
-	{% set description = 'Примеры использования компонентов' %}
-	{% set image = 'img/logo.png' %}
-	{% set url = 'url' %}
 	{{ macros.meta(title, description, image, url) }}
 {% endblock %}
 
