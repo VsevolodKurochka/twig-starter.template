@@ -9,18 +9,18 @@ import imagemin 				from 'gulp-imagemin';
 
 // Task `image`
 gulp.task('image', () => {
-	return gulp.src(`${folders.src}/img/**/*`)
+	return gulp.src(`${folders.assetsSrc}/img/**/*`)
 		.pipe(imagemin({
 			interlaced: true,
 			progressive: true,
 			optimizationLevel: 5,
 			svgoPlugins: [{removeViewBox: true}]
 		}))
-		.pipe(gulp.dest(`${folders.build}/img`))
+		.pipe(gulp.dest(`${folders.assetsBuild}/img`))
 });
 
 
 // Task `image:watch`
 gulp.task('image:watch', () =>
-	gulp.watch(`${folders.src}/img/**/*`, gulp.series('image'))
+	gulp.watch(`${folders.assetsSrc}/img/**/*`, gulp.series('image'))
 );

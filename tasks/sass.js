@@ -19,7 +19,7 @@ import {reload} from './browserSync';
 
 // Task `sass`
 gulp.task('sass', () => gulp
-	.src(`${folders.src}/sass/**/*.+(sass|scss)`)
+	.src(`${folders.assetsSrc}/sass/**/*.+(sass|scss)`)
 		.pipe(sassGlob())
 		.pipe(sass({
 			outputStyle: 'expanded'
@@ -32,11 +32,11 @@ gulp.task('sass', () => gulp
 		}))
 		.pipe(cleanCSS({compatibility: 'ie8'}))
 		.pipe(rename({suffix: '.min', prefix : ''}))
-		.pipe(gulp.dest(`${folders.build}/css`))
+		.pipe(gulp.dest(`${folders.assetsBuild}/css`))
 );
 
 
 // Task `sass:watch`
 gulp.task('sass:watch', () => {
-	gulp.watch(`${folders.src}/sass/**/*.+(sass|scss)`, gulp.series('sass', reload));
+	gulp.watch(`${folders.assetsSrc}/sass/**/*.+(sass|scss)`, gulp.series('sass', reload));
 });

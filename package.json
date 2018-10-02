@@ -1,14 +1,14 @@
 {
-  "name": "gulp-start-template",
+  "name": "twig-starter.template",
   "version": "1.0.0",
-  "description": "gulp start template",
+  "description": "Twig starter template",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "gulp",
-    "pug",
+    "twig",
     "sass"
   ],
   "author": "Vsevolod Kurochka",

@@ -40,11 +40,11 @@ gulp.task(
 // Build
 gulp.task(
 	'build',
-	gulp.parallel(
-		'sass',
-		'babel',
-		'image',
-		'fonts'
+	gulp.series(
+		'assets:build',
+		'vendor:build',
+		'views:build',
+		'php:build',
 	)
 );
 

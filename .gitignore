@@ -60,4 +60,4 @@ typings/
 PSD/
 *.psd
 
-src/build
+build

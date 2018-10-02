@@ -4,8 +4,10 @@
  */
 
 const folders = {
-	src: 'app/assets/src',
-	build: 'app/assets/build'
+	app: 'app',
+	assetsSrc: 'app/assets/src',
+	assetsBuild: 'app/assets/build',
+	build: 'build'
 };
 
 

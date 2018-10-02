@@ -10,9 +10,9 @@ import del 							from 'del';
 
 // Task `clean`
 gulp.task('clean', () => {
-		del(`${folders.build}/css`, {force: true});
-		del(`${folders.build}/fonts`, {force: true});
-		del(`${folders.build}/img`, {force: true});
-		del(`${folders.build}/js`, {force: true});
+		del(`${folders.assetsBuild}/css`, {force: true});
+		del(`${folders.assetsBuild}/fonts`, {force: true});
+		del(`${folders.assetsBuild}/img`, {force: true});
+		del(`${folders.assetsBuild}/js`, {force: true});
 	}
 );
