@@ -14,4 +14,30 @@
 5. Скрипты, которые обрабатываются <b>gulp-babel</b> - `app/assets/src/babel`
 6. Библиотеки, которые обрабатываются <b>скриптами по минификации</b> - `app/assets/src/libs`
 
+## Как запустить сборку
+
+### Запустить OpenServer
+
+### Склонировать папку в C:\OSPanel\domains (по умолчанию)
+```
+git clone https://github.com/VsevolodKurochka/twig-starter.template
+```
+
+### Зайди в папку
+```
+cd twig-starter.template
+```
+
+### Установите все зависимости (убедитесь, что **Node.js** и **NPM** установлен на вашем компьютере)
+```
+npm install
+```
+
+### Перейти в папку 'tasks' и открыть файл 'browserSync.js' и если нужно, то поменять на 26 строке proxy(по умолчанию: twig-starter.template)
+
+### Запустить проект
+```
+gulp
+```
+
 Если есть вопросы - пишите **seva.kurochka@gmail.com**
