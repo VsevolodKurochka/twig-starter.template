@@ -61,3 +61,6 @@ PSD/
 *.psd
 
 build
+
+#idea files
+.idea
