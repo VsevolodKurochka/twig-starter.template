@@ -1,43 +1,22 @@
-'use strict';
-
-/**
- * General
- * -----------------------------------------------------------------------------
- */
-
-import gulp 						from 'gulp';
-import folders					from './tasks/folders';
-
-/**
- * Require modules
- * -----------------------------------------------------------------------------
- */
-
+import gulp from 'gulp';
 import requireDir from 'require-dir';
-
+import {serve} from './tasks/browserSync';
 requireDir('./tasks');
 
-import {server, reload, serve} from './tasks/browserSync';
-
-// Your "watch" task
 gulp.task(
 	'watch', 
 	gulp.series(
 		serve,
-		'babel',
-		'concat',
 		gulp.parallel(
-			'sass',
-			'sass:watch',
-			'image',
-			'fonts',
-			'image:watch',
-			'fonts:watch'
+			'babel', 'babel:watch',
+			'concat', 'concat:watch',
+			'sass', 'sass:watch',
+			'image', 'image:watch',
+			'fonts', 'fonts:watch'
 		)
 	)
 );
 
-// Build
 gulp.task(
 	'build',
 	gulp.series(
