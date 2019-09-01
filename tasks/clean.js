@@ -1,11 +1,6 @@
-/**
- * Clean
- * -----------------------------------------------------------------------------
- */
-
-import gulp 						from 'gulp';
-import folders					from './folders';
-import del 							from 'del';
+import gulp from 'gulp';
+import folders	from './folders';
+import del from 'del';
 
 
 // Task `clean`

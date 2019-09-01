@@ -1,31 +1,23 @@
-/**
- * browserSync
- * -----------------------------------------------------------------------------
- * https://github.com/gulpjs/gulp/blob/4.0/docs/recipes/minimal-browsersync-setup-with-gulp4.md
- */
+import browserSync from 'browser-sync';
 
-import gulp 						from 'gulp';
-import folders					from './folders';
-import browserSync 			from 'browser-sync';
+const server = browserSync.create();
 
-
-export const server = browserSync.create();
-
-
-export function reload(done) {
+const reload = (done) => {
 	server.reload();
 	done();
-}
+};
 
-
-export function serve(done) {
-	
+const serve = (done) => {
 	global.watch = true;
-
 	server.init({
 		proxy: 'twig-starter.template',
 		notify: false
 	});
-
 	done();
-}
+};
+
+export {
+	server,
+	reload,
+	serve
+};

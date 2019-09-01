@@ -1,13 +1,7 @@
-/**
- * Concat
- * -----------------------------------------------------------------------------
- */
-
-import gulp 						from 'gulp';
-import concat 					from 'gulp-concat';
-import uglify 					from 'gulp-uglify';
-import folders					from './folders';
-import {reload} 				from './browserSync';
+import gulp from 'gulp';
+import concat from 'gulp-concat';
+import uglify from 'gulp-uglify';
+import folders from './folders';
 
 const concatSrc = [
 	//`${folders.assetsSrc}/js/libs/jquery.min.js`,
@@ -16,7 +10,6 @@ const concatSrc = [
 	`${folders.assetsSrc}/js/libs/vanilla.main.babel.min.js`
 ];
 
-// Task `scripts`
 gulp.task('concat', () =>
 	gulp.src(concatSrc)
 		.pipe(concat('scripts.min.js'))

@@ -1,11 +1,6 @@
-/**
- * Fonts from Source to Build
- * -----------------------------------------------------------------------------
- */
-
-import gulp 						from 'gulp';
-import folders					from './folders';
-import {server, reload, serve} from './browserSync';
+import gulp from 'gulp';
+import folders from './folders';
+import {reload} from './browserSync';
 
 
 // Task `fonts`
