@@ -1,5 +1,5 @@
-{% import 'macros/macros.base.twig' as macros %}
-{% extends 'layouts/base.twig' %}
+{% import 'macros/base.twig' as macros %}
+{% extends 'layouts/mainLayout.twig' %}
 
 {% set title = 'Документация' %}
 {% set description = 'Примеры использования компонентов' %}
@@ -25,8 +25,8 @@
 {% endblock %}
 
 {% block content %}
-	{% include 'site/docs/intro.twig' %}
-	{% include 'site/docs/content.twig' %}
+	{% include 'pages/docs/intro.twig' %}
+	{% include 'pages/docs/content.twig' %}
 {% endblock %}
 
 {% block footer %}
