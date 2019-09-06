@@ -1,9 +1,7 @@
 =linkEffect1($color: $color-brand-1)
   &:after
-    +pseudo
-
-    +tr
-
+    +pseudo()
+    +tr()
     top: 100%
     left: 0
     width: 100%
@@ -18,10 +16,8 @@
 =linkEffect2($color: $color-brand-1)
   &:before,
   &:after
-    +pseudo
-
-    +tr
-
+    +pseudo()
+    +tr()
     left: 0
     width: 100%
     height: 2px
@@ -46,10 +42,8 @@
 
 =linkEffect2($color: $color-brand-1)
   &:after
-    +pseudo
-
-    +tr
-
+    +pseudo()
+    +tr()
     left: 0
     width: 100%
     height: 2px
