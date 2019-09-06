@@ -19,7 +19,7 @@ gulp.task(
 
 gulp.task(
 	'build',
-	gulp.series(
+	gulp.parallel(
 		'assets:build',
 		'vendor:build',
 		'views:build',

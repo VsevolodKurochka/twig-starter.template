@@ -14,7 +14,6 @@ gulp.task('sass', () => gulp
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 		.pipe(csscomb())
 		.pipe(autoprefixer({
-			browsers: ['last 15 versions'],
 			cascade: false
 		}))
 		.pipe(cleanCSS({compatibility: 'ie8'}))
