@@ -1,16 +1,20 @@
-@import 'helpers/variables/*'
-@import 'helpers/maps/*'
-@import 'helpers/mixins/**/*'
-@import 'helpers/functions/*'
+@import 'abstracts/variables/*'
+@import 'abstracts/maps/*'
+@import 'abstracts/mixins/*'
+@import 'abstracts/functions/*'
 
 @import 'base/reset'
 @import 'base/base'
 @import 'base/fonts'
+@import 'base/colors'
+@import 'base/text'
 
-@import 'grid/*'
-
-@import 'utils/colors'
-@import 'utils/text'
+@import 'layouts/grid/utils/columns';
+@import 'layouts/grid/utils/visibility';
+@import 'layouts/grid/columns';
+@import 'layouts/grid/container';
+@import 'layouts/grid/row';
+@import 'layouts/grid/visibility';
 
 @import 'components/button'
 @import 'components/effects'
@@ -20,19 +24,18 @@
 @import 'components/title'
 @import 'components/section'
 
-@import 'layouts/nav/nav-variables'
-@import 'layouts/nav/nav-fixed'
+@import 'layouts/nav/abstracts/variables'
+@import 'layouts/nav/abstracts/menu-item-effects'
+@import 'layouts/nav/abstracts/hamburger-effects'
+@import 'layouts/nav/abstracts/addition-mixin-1'
+@import 'layouts/nav/abstracts/addition-mixin-2'
+@import 'layouts/nav/fixed'
 @import 'layouts/nav/nav'
-@import 'layouts/nav/nav-menu'
-@import 'layouts/nav/nav-menu-item-effects'
-@import 'layouts/nav/nav-menu-item'
-@import 'layouts/nav/nav-logo'
-@import 'layouts/nav/nav-hamburger-effects'
-@import 'layouts/nav/nav-hamburger'
-
-@import 'layouts/nav/nav-addition-mixin-1'
-@import 'layouts/nav/nav-addition-mixin-2'
-@import 'layouts/nav/nav-addition'
+@import 'layouts/nav/menu'
+@import 'layouts/nav/menu-item'
+@import 'layouts/nav/logo'
+@import 'layouts/nav/hamburger'
+@import 'layouts/nav/addition'
 
 @import 'layouts/footer/footer'
 
