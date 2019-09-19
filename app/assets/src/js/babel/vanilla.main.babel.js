@@ -1,64 +1,55 @@
 (function(){
-	function log(content){
-		console.log(content);
-	}
+	const hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 
-	var hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-
-	function addClass(element,cls){
-		if( !hasClass(element, cls) ){
+	const addClass = (element, cls) => {
+		if (!hasClass(element, cls)) {
 			let empty = '';
-			if(element.classList.value != "") empty = ' ';
+			if (element.classList.value !== '') {
+				empty = ' ';
+			}
 			element.className += empty + cls;
 		}
-	}
+	};
 
-	function removeClass(element, cls){
-		if( hasClass(element, cls) ) element.classList.remove(cls);
-	}
+	const removeClass = (element, cls) => {
+		if( hasClass(element, cls) ) {
+			element.classList.remove(cls);
+		}
+	};
 
-	function toggleClass(element, cls){
-		hasClass(element, cls) ? removeClass(element, cls) : addClass(element, cls);
-	}
+	const toggleClass = (element, cls) => {
+		if (hasClass(element, cls)) {
+			removeClass(element, cls)
+		} else {
+			addClass(element, cls)
+		}
+	};
 
-	var exists = element => typeof(element) != 'undefined' && element != null;
+	const exists = element => typeof(element) != 'undefined' && element != null;
 
 	class Modal {
 		constructor(){
-
-			// Prefix for modal class
-			this.prefix = '';
-
-			// Name of modal class
-			this.name = `${this.prefix}modal`;
-
-			// All modals
+			this.name = `modal`;
 			this.modals = document.querySelectorAll(`.${this.name}`);
-
-			// Open Buttons
 			this.openButtons = document.querySelectorAll(`[data-action="${this.name}"]`);
-
-			// Close Button(`x`)
 			this.closeButtons = document.querySelectorAll(`[data-close="${this.name}"]`);
 
-
-			for(let i = 0; i < this.openButtons.length; i++){
-				this.openButtons[i].addEventListener('click', (e) => {
+			this.openButtons.forEach((button) => {
+				button.addEventListener('click', (e) => {
 					this._showButtonClick(e);
 				});
-			}
+			});
 
-			for(let i = 0; i < this.closeButtons.length; i++){
-				this.closeButtons[i].addEventListener('click', (e) => {
+			this.closeButtons.forEach((button) => {
+				button.addEventListener('click', (e) => {
 					this._closeButtonClick(e);
 				});
-			}
+			});
 
 			document.body.addEventListener('click', (e) => {
 				this._bodyClick(e);
 			});
 		}
-
 
 		modalClose(el){
 			removeClass(el, `${this.name}_showing_in`);
@@ -71,11 +62,8 @@
 		}
 
 		_showButtonClick(e) {
-			// Get button data-attributes
-			var modalData = e.target.dataset;
-
-			// Get attribute data-open and replace # with empty line
-			var modalID = modalData.open.replace("#", "");
+			const modalData = e.target.dataset;
+			const modalID = modalData.open.replace("#", "");
 			
 			
 			if( exists(document.getElementById(modalID) ) ){
@@ -84,7 +72,7 @@
 
 				this.modalOpen(modalCurrent);
 
-				if(modalData.video != undefined){
+				if(modalData.video !== undefined){
 					
 
 					if( exists(modalCurrent.getElementsByClassName('modal__video')[0]) ){
