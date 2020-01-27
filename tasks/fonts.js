@@ -1,8 +1,12 @@
-import gulp from 'gulp';
-import {assetsSrc, assetsBuild} from './folders';
+import {src, dest, watch, series} from 'gulp';
+import {assetsSrc, assetsBuild} from './constants';
 import {reload} from './browserSync';
 
-const watch = `${assetsSrc}/fonts/**/*`;
+const fontsPath = `${assetsSrc}/fonts/**/*`;
+const fonts = () => src(fontsPath).pipe(dest(`${assetsBuild}/fonts`));
+const fontsWatch = () => watch(fontsPath, series(fonts, reload));
 
-gulp.task('fonts', () => gulp.src(watch).pipe(gulp.dest(`${assetsBuild}/fonts`)));
-gulp.task('fonts:watch', () => gulp.watch(watch, gulp.series('fonts', reload)));
+export {
+    fonts,
+    fontsWatch
+};

@@ -1,8 +1,28 @@
-import gulp from 'gulp';
-import requireDir from 'require-dir';
-import {serve} from './tasks/browserSync';
-requireDir('./tasks');
+import {series, parallel} from 'gulp';
+import {
+	serve, concat, concatWatch, fonts, fontsWatch, image, imageWatch, sassStyles, sassStylesWatch, customCss, customCssWatch,
+	assetsFolderBuild, vendorFolderBuild, viewsFolderBuild, phpFolderBuild
+} from './tasks';
 
+const dev = series(
+	serve,
+	parallel(
+		concat, concatWatch,
+		fonts, fontsWatch,
+		image, imageWatch,
+		sassStyles, sassStylesWatch,
+		customCss, customCssWatch
+	)
+);
+const build = parallel(assetsFolderBuild, vendorFolderBuild, viewsFolderBuild, phpFolderBuild);
+
+export default dev;
+
+export {
+	build
+};
+
+/*
 gulp.task(
 	'watch', 
 	gulp.series(
@@ -16,7 +36,9 @@ gulp.task(
 		)
 	)
 );
+*/
 
+/*
 gulp.task(
 	'build',
 	gulp.parallel(
@@ -25,6 +47,4 @@ gulp.task(
 		'views:build',
 		'php:build',
 	)
-);
-
-gulp.task('default', gulp.series('watch'));
+);*/

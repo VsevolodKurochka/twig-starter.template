@@ -1,8 +1,12 @@
-import gulp from 'gulp';
-import {assetsSrc, assetsBuild} from './folders';
+import {src, dest, watch, series} from 'gulp';
+import {assetsSrc, assetsBuild} from './constants';
 import {reload} from './browserSync';
 
-const watch = `${assetsSrc}/js/**/*`;
+const concatPath = `${assetsSrc}/js/**/*`;
+const concat = () => src(concatPath).pipe(dest(`${assetsBuild}/js`));
+const concatWatch = () => watch(concatPath, series(concat, reload));
 
-gulp.task('concat', () => gulp.src(watch).pipe(gulp.dest(`${assetsBuild}/js`)));
-gulp.task('concat:watch', () => gulp.watch(watch, gulp.series('concat', reload)));
+export {
+    concat,
+    concatWatch
+};

@@ -1,12 +1,11 @@
-import gulp from 'gulp';
-import {assetsBuild} from './folders';
+import {assetsBuild} from './constants';
 import del from 'del';
 
 const options = {force: true};
 
-gulp.task('clean', () => {
+export const clean = () => {
     del([`${assetsBuild}/css`], options);
     del([`${assetsBuild}/fonts`], options);
     del([`${assetsBuild}/img`], options);
     del([`${assetsBuild}/js`], options);
-});
+};
