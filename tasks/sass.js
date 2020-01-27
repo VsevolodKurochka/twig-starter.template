@@ -12,15 +12,15 @@ const sassWatch = `${assetsSrc}/sass/**/*.+(sass|scss)`;
 const cssWatch = `${assetsSrc}/sass/**/*.css`;
 
 gulp.task('sass', () => gulp.src(sassWatch)
-	.pipe(sassGlob())
-	.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-	.pipe(csscomb())
-	.pipe(autoprefixer({
-		cascade: false
-	}))
-	.pipe(cleanCSS({compatibility: 'ie8'}))
-	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(gulp.dest(`${assetsBuild}/css`))
+    .pipe(sassGlob())
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(csscomb())
+    .pipe(autoprefixer({
+        cascade: false
+    }))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(rename({suffix: '.min', prefix : ''}))
+    .pipe(gulp.dest(`${assetsBuild}/css`))
 );
 gulp.task('sass:watch', () => gulp.watch(sassWatch, gulp.series('sass', reload)));
 

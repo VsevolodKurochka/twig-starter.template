@@ -4,8 +4,8 @@ const assetsBuild = 'app/assets/build';
 const build = 'build';
 
 export {
-	app,
-	assetsSrc,
-	assetsBuild,
-	build
+    app,
+    assetsSrc,
+    assetsBuild,
+    build
 };

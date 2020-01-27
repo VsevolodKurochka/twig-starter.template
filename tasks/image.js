@@ -4,10 +4,10 @@ import {assetsSrc, assetsBuild} from './folders';
 
 const watch = `${assetsSrc}/img/**/*`;
 const options = {
-	interlaced: true,
-	progressive: true,
-	optimizationLevel: 5,
-	svgoPlugins: [{removeViewBox: true}]
+    interlaced: true,
+    progressive: true,
+    optimizationLevel: 5,
+    svgoPlugins: [{removeViewBox: true}]
 };
 
 gulp.task('image', () => gulp.src(watch).pipe(imagemin(options)).pipe(gulp.dest(`${assetsBuild}/img`)));

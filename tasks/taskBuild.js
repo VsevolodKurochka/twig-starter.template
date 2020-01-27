@@ -1,18 +1,18 @@
 import gulp from 'gulp';
-import folders from './folders';
+import {app, build, assetsBuild} from './folders';
 
 gulp.task('assets:build', () =>
-	gulp.src(`${folders.assetsBuild}/**/*`).pipe(gulp.dest(`${folders.build}/assets/build`))
+    gulp.src(`${assetsBuild}/**/*`).pipe(gulp.dest(`${build}/assets/build`))
 );
 
 gulp.task('vendor:build', () =>
-	gulp.src(`${folders.app}/vendor/**/*`).pipe(gulp.dest(`${folders.build}/vendor`))
+    gulp.src(`${app}/vendor/**/*`).pipe(gulp.dest(`${build}/vendor`))
 );
 
 gulp.task('views:build', () =>
-	gulp.src(`${folders.app}/views/**/*`).pipe(gulp.dest(`${folders.build}/views`))
+    gulp.src(`${app}/views/**/*`).pipe(gulp.dest(`${build}/views`))
 );
 
 gulp.task('php:build', () =>
-	gulp.src(`${folders.app}/*.php`).pipe(gulp.dest(`${folders.build}`))
+    gulp.src(`${app}/*.php`).pipe(gulp.dest(`${build}`))
 );
