@@ -1,13 +1,12 @@
 import gulp from 'gulp';
-import folders	from './folders';
+import {assetsBuild} from './folders';
 import del from 'del';
 
+const options = {force: true};
 
-// Task `clean`
 gulp.task('clean', () => {
-		del(`${folders.assetsBuild}/css`, {force: true});
-		del(`${folders.assetsBuild}/fonts`, {force: true});
-		del(`${folders.assetsBuild}/img`, {force: true});
-		del(`${folders.assetsBuild}/js`, {force: true});
-	}
-);
+    del([`${assetsBuild}/css`], options);
+    del([`${assetsBuild}/fonts`], options);
+    del([`${assetsBuild}/img`], options);
+    del([`${assetsBuild}/js`], options);
+});

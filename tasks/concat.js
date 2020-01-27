@@ -1,23 +1,8 @@
 import gulp from 'gulp';
-import concat from 'gulp-concat';
-import uglify from 'gulp-uglify';
-import folders from './folders';
+import {assetsSrc, assetsBuild} from './folders';
 import {reload} from './browserSync';
 
-const concatSrc = [
-	//`${folders.assetsSrc}/js/libs/jquery.min.js`,
-	`${folders.assetsSrc}/js/libs/smooth-scroll.min.js`,
-	//`${folders.assetsSrc}/js/libs/jquery.main.babel.min.js`,
-	`${folders.assetsSrc}/js/libs/vanilla.main.babel.min.js`
-];
+const watch = `${assetsSrc}/js/**/*`;
 
-gulp.task('concat', () =>
-	gulp.src(concatSrc)
-		.pipe(concat('scripts.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest(`${folders.assetsBuild}/js`))
-);
-
-gulp.task('concat:watch', () =>
-	gulp.watch(concatSrc, gulp.series('concat', reload))
-);
+gulp.task('concat', () => gulp.src(watch).pipe(gulp.dest(`${assetsBuild}/js`)));
+gulp.task('concat:watch', () => gulp.watch(watch, gulp.series('concat', reload)));

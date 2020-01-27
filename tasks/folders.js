@@ -1,8 +1,11 @@
-const folders = {
-	app: 'app',
-	assetsSrc: 'app/assets/src',
-	assetsBuild: 'app/assets/build',
-	build: 'build'
-};
+const app = 'app';
+const assetsSrc = 'app/assets/src';
+const assetsBuild = 'app/assets/build';
+const build = 'build';
 
-export default folders;
+export {
+	app,
+	assetsSrc,
+	assetsBuild,
+	build
+};

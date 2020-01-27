@@ -3,11 +3,13 @@ import babel from 'gulp-babel';
 import uglify from 'gulp-uglify';
 import notify from 'gulp-notify';
 import rename from 'gulp-rename';
-import folders from './folders';
+import {assetsSrc} from './folders';
 import {reload} from './browserSync';
 
+const watch = `${assetsSrc}/js/babel/*.babel.js`;
+
 gulp.task('babel', () =>
-	gulp.src(`${folders.assetsSrc}/js/babel/*.babel.js`)
+	gulp.src(watch)
 		.pipe(babel())
 		.on('error', notify.onError({
 			title: 'Babel Error',
@@ -15,9 +17,9 @@ gulp.task('babel', () =>
 		}))
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min', prefix : ''}))
-		.pipe(gulp.dest(`${folders.assetsSrc}/js/libs`))
+		.pipe(gulp.dest(`${assetsSrc}/js/libs`))
 );
 
 gulp.task('babel:watch', () =>
-	gulp.watch(`${folders.assetsSrc}/js/babel/*.babel.js`, gulp.series('babel', reload))
+	gulp.watch(watch, gulp.series('babel', reload))
 );
